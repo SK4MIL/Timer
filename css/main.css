@@ -1,0 +1,38 @@
+body {
+    background: rgb(1, 1, 19);
+}
+
+.timer {
+    font-family: sans-serif;
+    display:  inline-block;
+    padding: 25px 32px;
+    border-radius: 25%;
+    background: white;
+}
+
+.timer_part {
+    text-align: center;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.timer_btn{
+    width: 50px;
+    height: 50px;
+    margin-left: 10px;
+    border-radius: 50%;
+    border: none;
+    color: white;
+    background-color: blueviolet;
+    cursor: pointer;
+}
+.timer_btn_control{
+    margin-left: 52px;
+}
+
+.timer_btn_start{
+    background: rgb(26, 145, 26);
+}
+.timer_btn_stop{
+    background: rgb(145, 4, 4);
+}
