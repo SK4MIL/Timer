@@ -11,7 +11,7 @@ export default class Timer {
         };
 
         this.interval = null;
-        this.remainingSeconds = 10;
+        this.remainingSeconds = 0;
         this.updateInterfaceTime();
         this.updateInterfaceContols();
         this.start();
