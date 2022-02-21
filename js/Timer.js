@@ -82,7 +82,7 @@ export default class Timer {
     }
 
     nottify(ev){
-        const audio = new Audio("Timer/media/alert.wav")
+        const audio = new Audio("media/alert.wav")
        // audio.src = "../media/alert.wav";
         audio.removeAttribute('controls');
         audio.play();
