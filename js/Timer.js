@@ -3,7 +3,7 @@ export default class Timer {
         root.innerHTML = Timer.getHTML();
 
         this.interval = null;
-        this.remainingSeconds = 5;
+        this.remainingSeconds = 0;
 
         this.el ={
             hours: root.querySelector(".timer_part_hours"),
@@ -65,11 +65,10 @@ export default class Timer {
             this.updateInterfaceTime();   
         
             if (this.remainingSeconds === 0) {
-                //document.body.style.backgroundColor = 'black'
                 this.stop();
                 this.nottify();
-                //alert("Koniec czasu");
-            }//document.body.style.backgroundColor = '#ddd';
+                alert("Koniec czasu");
+            }
         }, 1000);
 
         this.updateInterfaceContols(); 
@@ -83,7 +82,7 @@ export default class Timer {
     }
 
     nottify(ev){
-        const audio = new Audio("../media/alert.wav")
+        const audio = new Audio("/media/alert.wav")
        // audio.src = "../media/alert.wav";
         audio.removeAttribute('controls');
         audio.play();
