@@ -1,6 +1,8 @@
 export default class Timer {
     constructor(root){
         root.innerHTML = Timer.getHTML();
+        let audio = document.createElement('audio');
+        audio.src = "../media/alert.wav";
 
         this.el ={
             hours: root.querySelector(".timer_part_hours"),
@@ -82,9 +84,7 @@ export default class Timer {
     }
 
     nottify(ev){
-        let audio = document.createElement('audio');
         audio.removeAttribute('controls');
-        audio.src = "../media/alert.wav";
         audio.play();
     }
     
