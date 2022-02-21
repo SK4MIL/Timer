@@ -1,8 +1,9 @@
 export default class Timer {
     constructor(root){
         root.innerHTML = Timer.getHTML();
-        let audio = document.createElement('audio');
-        audio.src = "../media/alert.wav";
+
+        this.interval = null;
+        this.remainingSeconds = 5;
 
         this.el ={
             hours: root.querySelector(".timer_part_hours"),
@@ -12,8 +13,6 @@ export default class Timer {
             reset: root.querySelector(".timer_btn_reset")
         };
 
-        this.interval = null;
-        this.remainingSeconds = 0;
         this.updateInterfaceTime();
         this.updateInterfaceContols();
         this.start();
@@ -67,8 +66,8 @@ export default class Timer {
         
             if (this.remainingSeconds === 0) {
                 //document.body.style.backgroundColor = 'black'
-                this.nottify();
                 this.stop();
+                this.nottify();
                 //alert("Koniec czasu");
             }//document.body.style.backgroundColor = '#ddd';
         }, 1000);
@@ -84,6 +83,8 @@ export default class Timer {
     }
 
     nottify(ev){
+        const audio = new Audio("../media/alert.wav")
+       // audio.src = "../media/alert.wav";
         audio.removeAttribute('controls');
         audio.play();
     }
@@ -104,6 +105,5 @@ export default class Timer {
         </button>
         `;
     }
-
 
 }
