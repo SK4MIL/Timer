@@ -3,7 +3,7 @@ export default class Timer {
         root.innerHTML = Timer.getHTML();
 
         this.interval = null;
-        this.remainingSeconds = 0;
+        this.remainingSeconds = 5;
 
         this.el ={
             hours: root.querySelector(".timer_part_hours"),
@@ -67,7 +67,7 @@ export default class Timer {
             if (this.remainingSeconds === 0) {
                 this.stop();
                 this.nottify();
-                alert("Koniec czasu");
+                //alert("Koniec czasu");
             }
         }, 1000);
 
@@ -82,9 +82,8 @@ export default class Timer {
     }
 
     nottify(ev){
-        const audio = new Audio("../media/alert.wav")
-       // audio.src = "../media/alert.wav";
-        audio.removeAttribute('controls');
+        //const audio = new Audio("../media/alert.wav")
+        // audio.src = "../media/alert.wav";
         audio.play();
     }
     
